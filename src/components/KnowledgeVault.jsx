@@ -99,9 +99,9 @@ export default function KnowledgeVault({ state, updateState, awardXP }) {
                     style={{ 
                       padding: '10px 14px', 
                       cursor: 'pointer',
-                      background: isActive ? 'rgba(139, 92, 246, 0.08)' : 'rgba(15, 23, 42, 0.4)',
-                      borderColor: isActive ? '#8b5cf6' : 'rgba(255,255,255,0.03)',
-                      borderLeft: `3px solid ${isActive ? '#8b5cf6' : 'transparent'}`,
+                      background: isActive ? 'var(--area-research-glow)' : 'var(--color-bg-card)',
+                      borderColor: isActive ? 'var(--area-research)' : 'var(--color-border)',
+                      borderLeft: `3px solid ${isActive ? 'var(--area-research)' : 'transparent'}`,
                       display: 'flex', 
                       justifyContent: 'space-between', 
                       alignItems: 'center',
@@ -109,7 +109,7 @@ export default function KnowledgeVault({ state, updateState, awardXP }) {
                     }}
                   >
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <h4 style={{ fontWeight: 700, fontSize: '0.85rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: isActive ? '#8b5cf6' : '#fff' }}>{n.title}</h4>
+                      <h4 style={{ fontWeight: 700, fontSize: '0.85rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: isActive ? 'var(--area-research)' : 'var(--color-text-primary)' }}>{n.title}</h4>
                       <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)' }}>{n.date} ● {n.area}</span>
                     </div>
 
@@ -178,9 +178,9 @@ export default function KnowledgeVault({ state, updateState, awardXP }) {
           
           {selectedNote ? (
             <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px', minHeight: '380px' }}>
-              <div style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '12px' }}>
+              <div style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '12px' }}>
                 <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)' }}>ORGANIZED IN AREA: {selectedNote.area.toUpperCase()} ● CREATED: {selectedNote.date}</span>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', color: '#8b5cf6', marginTop: '4px' }}>{selectedNote.title}</h3>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', color: 'var(--area-research)', marginTop: '4px' }}>{selectedNote.title}</h3>
               </div>
 
               {/* Note Content Input / Editor */}

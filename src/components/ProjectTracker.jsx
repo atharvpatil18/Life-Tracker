@@ -129,9 +129,9 @@ export default function ProjectTracker({ state, updateState, awardXP }) {
                     style={{ 
                       padding: '12px 16px', 
                       cursor: 'pointer',
-                      background: isActive ? 'rgba(59, 130, 246, 0.08)' : 'rgba(15, 23, 42, 0.4)',
-                      borderColor: isActive ? '#3b82f6' : 'rgba(255,255,255,0.05)',
-                      borderLeft: `4px solid ${isActive ? '#3b82f6' : 'transparent'}`,
+                      background: isActive ? 'var(--area-dsa-glow)' : 'var(--color-bg-card)',
+                      borderColor: isActive ? 'var(--area-dsa)' : 'var(--color-border)',
+                      borderLeft: `4px solid ${isActive ? 'var(--area-dsa)' : 'transparent'}`,
                       display: 'flex', 
                       justifyContent: 'space-between', 
                       alignItems: 'center',
@@ -139,7 +139,7 @@ export default function ProjectTracker({ state, updateState, awardXP }) {
                     }}
                   >
                     <div>
-                      <h4 style={{ fontWeight: 700, fontSize: '0.9rem', color: isActive ? '#3b82f6' : '#fff' }}>{proj.name}</h4>
+                      <h4 style={{ fontWeight: 700, fontSize: '0.9rem', color: isActive ? 'var(--area-dsa)' : 'var(--color-text-primary)' }}>{proj.name}</h4>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
                         <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--color-text-muted)' }}>{proj.area}</span>
                         <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)' }}>●</span>
@@ -228,12 +228,12 @@ export default function ProjectTracker({ state, updateState, awardXP }) {
               
               <div>
                 <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', tracking: '0.05em' }}>SELECTED OBJECTIVE COMPILER</span>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', marginTop: '4px', color: '#3b82f6' }}>{selectedProj.name}</h3>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', marginTop: '4px', color: 'var(--area-dsa)' }}>{selectedProj.name}</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginTop: '4px' }}>{selectedProj.description}</p>
               </div>
 
               {/* Components breakdown progress sliders */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '20px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '20px' }}>
                 <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Layers size={16} color="var(--area-dsa)" /> Architectural Component Modules
                 </h4>
@@ -262,8 +262,8 @@ export default function ProjectTracker({ state, updateState, awardXP }) {
                         </div>
                       </div>
 
-                      <div style={{ width: '100%', height: '8px', background: 'rgba(255,255,255,0.03)', borderRadius: '999px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
-                        <div style={{ width: `${val}%`, height: '100%', background: 'linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%)', borderRadius: '999px', transition: 'width 0.3s ease' }}></div>
+                      <div style={{ width: '100%', height: '8px', background: 'rgba(0, 0, 0, 0.04)', borderRadius: '999px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                        <div style={{ width: `${val}%`, height: '100%', background: 'linear-gradient(90deg, var(--area-dsa) 0%, var(--area-research) 100%)', borderRadius: '999px', transition: 'width 0.3s ease' }}></div>
                       </div>
                     </div>
                   ))}

@@ -63,7 +63,7 @@ export default function SettingsTab({ state, updateState }) {
 
       {/* Profile settings */}
       <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '12px', color: '#c084fc', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', borderBottom: '1px solid var(--color-border)', paddingBottom: '12px', color: 'var(--area-research)', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Sparkles size={20} /> Personal Profile
         </h3>
         
@@ -91,7 +91,7 @@ export default function SettingsTab({ state, updateState }) {
 
       {/* Gemini Integration */}
       <div className="glass-panel shadow-academics" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '12px', color: '#8b5cf6', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', borderBottom: '1px solid var(--color-border)', paddingBottom: '12px', color: 'var(--area-research)', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Key size={20} /> Gemini Core API Configuration
         </h3>
         
@@ -115,7 +115,7 @@ export default function SettingsTab({ state, updateState }) {
 
       {/* GitHub & LeetCode username settings */}
       <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '12px', color: '#3b82f6', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', borderBottom: '1px solid var(--color-border)', paddingBottom: '12px', color: 'var(--area-dsa)', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Code size={20} /> Live Developer Profiles
         </h3>
         

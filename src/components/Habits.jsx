@@ -142,7 +142,7 @@ export default function Habits({ state, updateState, awardXP }) {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
                       <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--color-text-muted)', fontWeight: 600 }}>{habit.frequency} ● #{habit.area}</span>
-                      <h4 style={{ fontWeight: 700, fontSize: '1rem', marginTop: '4px', color: isCompletedToday ? 'var(--color-text-secondary)' : '#fff', textDecoration: isCompletedToday ? 'line-through' : 'none' }}>
+                      <h4 style={{ fontWeight: 700, fontSize: '1rem', marginTop: '4px', color: isCompletedToday ? 'var(--color-text-secondary)' : 'var(--color-text-primary)', textDecoration: isCompletedToday ? 'line-through' : 'none' }}>
                         {habit.name}
                       </h4>
                     </div>
@@ -156,7 +156,7 @@ export default function Habits({ state, updateState, awardXP }) {
                   </div>
 
                   {/* Actions & Streaks */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.03)', paddingTop: '10px', marginTop: '10px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--color-border)', paddingTop: '10px', marginTop: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', fontWeight: 700, color: 'var(--area-leadership)' }}>
                       <Flame size={16} className="animate-float" />
                       <span>{habit.streak}d streak</span>
@@ -169,7 +169,7 @@ export default function Habits({ state, updateState, awardXP }) {
                         padding: '6px 12px', 
                         fontSize: '0.75rem', 
                         background: isCompletedToday ? 'rgba(16, 185, 129, 0.15)' : 'transparent',
-                        borderColor: isCompletedToday ? 'var(--area-academics)' : 'rgba(255,255,255,0.1)',
+                        borderColor: isCompletedToday ? 'var(--area-academics)' : 'var(--color-border)',
                         color: isCompletedToday ? 'var(--area-academics)' : 'var(--color-text-secondary)'
                       }}
                     >

@@ -187,16 +187,16 @@ export default function App() {
         {/* Branding header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', paddingLeft: '8px' }}>
           <div style={{
-            background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
+            background: 'linear-gradient(135deg, #c2410c 0%, #7c3aed 100%)',
             width: '36px', height: '36px', borderRadius: '10px',
             display: 'flex', alignItems: 'center', justifyItems: 'center', justifyContent: 'center',
-            boxShadow: '0 0 12px rgba(139, 92, 246, 0.4)'
+            boxShadow: '0 4px 12px rgba(194, 65, 12, 0.15)'
           }}>
             <Sparkles size={20} color="#fff" />
           </div>
           <div>
             <h1 className="logo-text" style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', tracking: '-0.025em', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              Atharv<span style={{ color: '#8b5cf6' }}>OS</span>
+              Atharv<span style={{ color: 'var(--area-research)' }}>OS</span>
             </h1>
             <p className="logo-text" style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--color-text-muted)', tracking: '0.05em', fontWeight: 600 }}>Digital Growth Twin</p>
           </div>
@@ -208,11 +208,11 @@ export default function App() {
             <img 
               src={state.profile.avatar} 
               alt={state.profile.name} 
-              style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: '2px solid rgba(168, 85, 247, 0.4)' }}
+              style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: '2px solid rgba(124, 58, 237, 0.4)' }}
             />
             <div style={{ flex: 1, minWidth: 0 }}>
               <p style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.85rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{state.profile.name}</p>
-              <p style={{ fontSize: '0.7rem', color: '#c084fc', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '3px' }}>
+              <p style={{ fontSize: '0.7rem', color: 'var(--area-research)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '3px' }}>
                 {state.profile.title}
               </p>
             </div>
@@ -225,12 +225,12 @@ export default function App() {
               <span>Experience (XP)</span>
               <span>{state.profile.xp} / {state.profile.xpForNextLevel} XP</span>
             </div>
-            <div style={{ width: '100%', height: '5px', background: 'rgba(15, 23, 42, 0.8)', borderRadius: '999px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ width: '100%', height: '5px', background: 'rgba(0, 0, 0, 0.08)', borderRadius: '999px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
               <div style={{ 
                 width: `${(state.profile.xp / state.profile.xpForNextLevel) * 100}%`, 
                 height: '100%', 
-                background: 'linear-gradient(90deg, #7c3aed 0%, #c084fc 100%)',
-                boxShadow: '0 0 8px rgba(168, 85, 247, 0.6)',
+                background: 'linear-gradient(90deg, var(--area-research) 0%, var(--area-personal) 100%)',
+                boxShadow: '0 1px 4px rgba(124, 58, 237, 0.2)',
                 transition: 'width 0.5s ease-out' 
               }}></div>
             </div>
@@ -251,14 +251,14 @@ export default function App() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(59, 130, 246, 0.08)' : 'transparent',
-                  color: active ? '#3b82f6' : 'var(--color-text-secondary)',
-                  borderLeft: active ? '3px solid #3b82f6' : '3px solid transparent',
+                  background: active ? 'rgba(194, 65, 12, 0.05)' : 'transparent',
+                  color: active ? '#c2410c' : 'var(--color-text-secondary)',
+                  borderLeft: active ? '3px solid #c2410c' : '3px solid transparent',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
-                <Icon size={18} style={{ color: active ? '#3b82f6' : 'inherit' }} />
+                <Icon size={18} style={{ color: active ? '#c2410c' : 'inherit' }} />
                 <span className="nav-label">{item.label}</span>
               </button>
             );
@@ -275,14 +275,14 @@ export default function App() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(139, 92, 246, 0.08)' : 'transparent',
-                  color: active ? '#8b5cf6' : 'var(--color-text-secondary)',
-                  borderLeft: active ? '3px solid #8b5cf6' : '3px solid transparent',
+                  background: active ? 'rgba(124, 58, 237, 0.05)' : 'transparent',
+                  color: active ? '#7c3aed' : 'var(--color-text-secondary)',
+                  borderLeft: active ? '3px solid #7c3aed' : '3px solid transparent',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
-                <Icon size={18} style={{ color: active ? '#8b5cf6' : 'inherit' }} />
+                <Icon size={18} style={{ color: active ? '#7c3aed' : 'inherit' }} />
                 <span className="nav-label">{item.label}</span>
               </button>
             );
@@ -299,14 +299,14 @@ export default function App() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(245, 158, 11, 0.08)' : 'transparent',
-                  color: active ? '#f59e0b' : 'var(--color-text-secondary)',
-                  borderLeft: active ? '3px solid #f59e0b' : '3px solid transparent',
+                  background: active ? 'rgba(180, 83, 9, 0.05)' : 'transparent',
+                  color: active ? '#b45309' : 'var(--color-text-secondary)',
+                  borderLeft: active ? '3px solid #b45309' : '3px solid transparent',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
-                <Icon size={18} style={{ color: active ? '#f59e0b' : 'inherit' }} />
+                <Icon size={18} style={{ color: active ? '#b45309' : 'inherit' }} />
                 <span className="nav-label">{item.label}</span>
               </button>
             );
@@ -323,14 +323,14 @@ export default function App() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(16, 185, 129, 0.08)' : 'transparent',
-                  color: active ? '#10b981' : 'var(--color-text-secondary)',
-                  borderLeft: active ? '3px solid #10b981' : '3px solid transparent',
+                  background: active ? 'rgba(22, 101, 52, 0.05)' : 'transparent',
+                  color: active ? '#166534' : 'var(--color-text-secondary)',
+                  borderLeft: active ? '3px solid #166534' : '3px solid transparent',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
-                <Icon size={18} style={{ color: active ? '#10b981' : 'inherit' }} />
+                <Icon size={18} style={{ color: active ? '#166534' : 'inherit' }} />
                 <span className="nav-label">{item.label}</span>
               </button>
             );
@@ -347,14 +347,14 @@ export default function App() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(255, 255, 255, 0.04)' : 'transparent',
-                  color: active ? '#f9fafb' : 'var(--color-text-secondary)',
-                  borderLeft: active ? '3px solid rgba(255,255,255,0.4)' : '3px solid transparent',
+                  background: active ? 'rgba(0, 0, 0, 0.03)' : 'transparent',
+                  color: active ? '#111827' : 'var(--color-text-secondary)',
+                  borderLeft: active ? '3px solid #111827' : '3px solid transparent',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
-                <Icon size={18} style={{ color: active ? '#f9fafb' : 'inherit' }} />
+                <Icon size={18} style={{ color: active ? '#111827' : 'inherit' }} />
                 <span className="nav-label">{item.label}</span>
               </button>
             );
@@ -373,12 +373,11 @@ export default function App() {
           position: 'fixed',
           bottom: '24px',
           right: '24px',
-          background: 'rgba(15, 10, 25, 0.85)',
-          backdropFilter: 'blur(12px)',
-          border: xpNotification.levelUp ? '2px solid #8b5cf6' : '1px solid rgba(168, 85, 247, 0.35)',
+          background: '#ffffff',
+          border: xpNotification.levelUp ? '2px solid var(--area-research)' : '1px solid var(--color-border)',
           borderRadius: '12px',
           padding: '16px',
-          boxShadow: xpNotification.levelUp ? '0 0 25px rgba(139, 92, 246, 0.5)' : '0 8px 32px 0 rgba(168, 85, 247, 0.2)',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02)',
           zIndex: 1000,
           display: 'flex',
           flexDirection: 'column',
@@ -387,18 +386,18 @@ export default function App() {
         }}>
           {xpNotification.levelUp ? (
             <>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#c084fc', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--area-research)', fontWeight: 800, fontFamily: 'var(--font-display)' }}>
                 <Sparkles size={20} className="animate-float" />
                 <span>LEVEL UP! ATHARV ASCENDED</span>
               </div>
               <p style={{ fontSize: '0.8rem', color: 'var(--color-text-primary)' }}>
-                You have reached <strong style={{ color: '#a855f7' }}>Level {xpNotification.level}</strong>! Keep building!
+                You have reached <strong style={{ color: 'var(--area-research)' }}>Level {xpNotification.level}</strong>! Keep building!
               </p>
             </>
           ) : (
             <>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#a855f7', fontWeight: 700 }}>
-                <CheckCircle2 size={18} color="#a855f7" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--area-research)', fontWeight: 700 }}>
+                <CheckCircle2 size={18} color="var(--area-research)" />
                 <span>+{xpNotification.amount} XP Awarded</span>
               </div>
               <p style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>

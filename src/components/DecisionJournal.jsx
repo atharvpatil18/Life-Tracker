@@ -103,7 +103,7 @@ export default function DecisionJournal({ state, updateState, awardXP }) {
                     <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: 'var(--color-text-muted)', fontWeight: 700, tracking: '0.05em', display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <Calendar size={12} /> LOGGED: {dec.date}
                     </span>
-                    <h4 style={{ fontWeight: 800, fontSize: '1.1rem', marginTop: '6px', color: '#fff' }}>{dec.chosenChoice}</h4>
+                    <h4 style={{ fontWeight: 800, fontSize: '1.1rem', marginTop: '6px', color: 'var(--color-text-primary)' }}>{dec.chosenChoice}</h4>
                   </div>
                   
                   <span style={{ 
@@ -124,7 +124,7 @@ export default function DecisionJournal({ state, updateState, awardXP }) {
 
                 {dec.checked ? (
                   <div style={{ 
-                    borderTop: '1px solid rgba(255,255,255,0.05)', 
+                    borderTop: '1px solid var(--color-border)', 
                     paddingTop: '12px', 
                     marginTop: '12px', 
                     background: 'rgba(16, 185, 129, 0.03)', 
@@ -139,7 +139,7 @@ export default function DecisionJournal({ state, updateState, awardXP }) {
                     <p style={{ color: 'var(--color-text-secondary)' }}>{dec.outcome}</p>
                   </div>
                 ) : (
-                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '12px', marginTop: '12px' }}>
+                  <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '12px', marginTop: '12px' }}>
                     {expandedDecId === dec.id ? (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', animation: 'popUp 0.2s ease' }}>
                         <div style={{ display: 'flex', gap: '12px' }}>
@@ -171,7 +171,7 @@ export default function DecisionJournal({ state, updateState, awardXP }) {
 
                         <div style={{ display: 'flex', gap: '8px' }}>
                           <button onClick={() => handleResolveOutcome(dec.id)} className="cyber-btn cyber-btn-primary" style={{ padding: '6px 12px', fontSize: '0.75rem' }}>Save Audit</button>
-                          <button onClick={() => setExpandedGoalId(null)} className="cyber-btn" style={{ padding: '6px 12px', fontSize: '0.75rem' }}>Cancel</button>
+                          <button onClick={() => setExpandedDecId(null)} className="cyber-btn" style={{ padding: '6px 12px', fontSize: '0.75rem' }}>Cancel</button>
                         </div>
                       </div>
                     ) : (

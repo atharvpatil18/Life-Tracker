@@ -222,7 +222,7 @@ export default function AIMLResearch({ state, updateState, awardXP }) {
             )}
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
+          <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '16px', fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
             Your research entries are linked dynamically into your <strong>Smart Journal</strong> and feed the context parameters of the <strong>AI Coach</strong>.
           </div>
         </div>

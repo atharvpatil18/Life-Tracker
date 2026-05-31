@@ -109,7 +109,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
           <div style={{ position: 'relative', width: '130px', height: '130px', flexShrink: 0 }}>
             {/* SVG Circle Gauge */}
             <svg style={{ transform: 'rotate(-90deg)', width: '130px', height: '130px' }}>
-              <circle cx="65" cy="65" r="50" fill="transparent" stroke="rgba(255,255,255,0.03)" strokeWidth="10" />
+              <circle cx="65" cy="65" r="50" fill="transparent" stroke="rgba(0,0,0,0.05)" strokeWidth="10" />
               <circle 
                 cx="65" cy="65" r="50" 
                 fill="transparent" 
@@ -121,8 +121,8 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
               />
               <defs>
                 <linearGradient id="priGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#06b6d4" />
-                  <stop offset="100%" stopColor="#10b981" />
+                  <stop offset="0%" stopColor="var(--area-leadership)" />
+                  <stop offset="100%" stopColor="var(--area-academics)" />
                 </linearGradient>
               </defs>
             </svg>
@@ -149,7 +149,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
             <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', tracking: '0.05em', display: 'flex', alignItems: 'center', gap: '4px' }}>
               <AlertCircle size={12} color="var(--area-health)" /> WEAKEST AREA IDENTIFIED
             </span>
-            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginTop: '6px', color: '#fff' }}>
+            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginTop: '6px', color: 'var(--color-text-primary)' }}>
               {weakest.area}
             </h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '4px', lineHeight: '1.4' }}>
@@ -170,7 +170,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
         
         {/* Resume Core Segment checklists */}
         <div className="glass-panel glass-card-glow-career" style={{ padding: '24px' }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '10px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid var(--color-border)', paddingBottom: '10px' }}>
             <ShieldCheck size={18} color="var(--area-career)" /> Resume Core Audits (RQS: {rqs}%)
           </h3>
 
@@ -179,7 +179,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
               <div 
                 key={key} 
                 onClick={() => handleToggleResumeCheck(key)}
-                style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: val ? 'var(--color-text-secondary)' : '#fff' }}
+                style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: val ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}
               >
                 {val ? <CheckCircle2 size={16} color="var(--area-career)" /> : <Circle size={16} color="var(--color-text-muted)" />}
                 <span style={{ textTransform: 'capitalize' }}>{key === 'openSource' ? 'Open Source Contribution Segment' : `${key} segment`}</span>
@@ -190,14 +190,14 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
 
         {/* CS Fundamentals checkpoints */}
         <div className="glass-panel glass-card-glow-research" style={{ padding: '24px' }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '10px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid var(--color-border)', paddingBottom: '10px' }}>
             <Layers size={18} color="var(--area-research)" /> CS Core Fundamentals (SPS: {sps}%)
           </h3>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <div 
               onClick={() => handleToggleFundamental('os', 'Operating Systems')}
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.os ? 'var(--color-text-secondary)' : '#fff' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.os ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}
             >
               {fundamentals.os ? <CheckCircle2 size={16} color="var(--area-research)" /> : <Circle size={16} color="var(--color-text-muted)" />}
               <span>Operating Systems (Threads, Semaphores, Page Replacements)</span>
@@ -205,7 +205,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
 
             <div 
               onClick={() => handleToggleFundamental('dbms', 'Database Management')}
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.dbms ? 'var(--color-text-secondary)' : '#fff' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.dbms ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}
             >
               {fundamentals.dbms ? <CheckCircle2 size={16} color="var(--area-research)" /> : <Circle size={16} color="var(--color-text-muted)" />}
               <span>Database Management (DBMS - Normalization, SQL, Transactions)</span>
@@ -213,7 +213,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
 
             <div 
               onClick={() => handleToggleFundamental('networks', 'Computer Networks')}
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.networks ? 'var(--color-text-secondary)' : '#fff' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.networks ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}
             >
               {fundamentals.networks ? <CheckCircle2 size={16} color="var(--area-research)" /> : <Circle size={16} color="var(--color-text-muted)" />}
               <span>Computer Networks (OSI layers, TCP/UDP, DNS, IP Subnets)</span>
@@ -221,7 +221,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
 
             <div 
               onClick={() => handleToggleFundamental('coa', 'Computer Organization')}
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.coa ? 'var(--color-text-secondary)' : '#fff' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.coa ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}
             >
               {fundamentals.coa ? <CheckCircle2 size={16} color="var(--area-research)" /> : <Circle size={16} color="var(--color-text-muted)" />}
               <span>Computer Architecture (COA - Cache mapping, Pipelining, Hazards)</span>
@@ -229,7 +229,7 @@ export default function PlacementIndex({ state, updateState, awardXP }) {
 
             <div 
               onClick={() => handleToggleFundamental('compiler', 'Compiler Design')}
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.compiler ? 'var(--color-text-secondary)' : '#fff' }}
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', cursor: 'pointer', color: fundamentals.compiler ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}
             >
               {fundamentals.compiler ? <CheckCircle2 size={16} color="var(--area-research)" /> : <Circle size={16} color="var(--color-text-muted)" />}
               <span>Compiler Design & TOC (Parsers, Lexical Analysis, NFAs/DFAs)</span>

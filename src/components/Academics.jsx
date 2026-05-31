@@ -176,7 +176,7 @@ export default function Academics({ state, updateState, awardXP }) {
           <div style={{ position: 'relative', width: '100px', height: '100px', flexShrink: 0 }}>
             {/* Simple Circular Progress Bar */}
             <svg style={{ transform: 'rotate(-90deg)', width: '100px', height: '100px' }}>
-              <circle cx="50" cy="50" r="40" fill="transparent" stroke="rgba(255,255,255,0.03)" strokeWidth="8" />
+              <circle cx="50" cy="50" r="40" fill="transparent" stroke="rgba(0,0,0,0.05)" strokeWidth="8" />
               <circle 
                 cx="50" cy="50" r="40" 
                 fill="transparent" 
@@ -194,7 +194,7 @@ export default function Academics({ state, updateState, awardXP }) {
 
           <div>
             <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--color-text-muted)', fontWeight: 700, tracking: '0.05em' }}>LECTURE ATTENDANCE RATING</span>
-            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', margin: '4px 0', color: '#fff' }}>
+            <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', margin: '4px 0', color: 'var(--color-text-primary)' }}>
               {overallAttendance >= 75 ? "Optimal Subject Health" : "CRITICAL ATTENDANCE WARN"}
             </h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: '1.4' }}>
@@ -249,7 +249,7 @@ export default function Academics({ state, updateState, awardXP }) {
                   }}>{sub.health}%</span>
                 </div>
                 
-                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.03)', borderRadius: '999px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div style={{ width: '100%', height: '6px', background: 'rgba(0,0,0,0.04)', borderRadius: '999px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
                   <div style={{ 
                     width: `${sub.health}%`, 
                     height: '100%', 
@@ -264,7 +264,7 @@ export default function Academics({ state, updateState, awardXP }) {
               </div>
 
               {/* Log actions */}
-              <div style={{ display: 'flex', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '10px' }}>
+              <div style={{ display: 'flex', gap: '8px', borderTop: '1px solid var(--color-border)', paddingTop: '10px' }}>
                 <button 
                   onClick={() => handleLogAttendance(sub.name, true)}
                   className="cyber-btn"

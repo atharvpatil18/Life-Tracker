@@ -80,7 +80,7 @@ export default function PersonalLife({ state, updateState, awardXP }) {
             </div>
 
             {/* Meaningful conversations */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'rgba(168, 85, 247, 0.03)', borderRadius: '8px', border: '1px solid rgba(168, 85, 247, 0.1)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: 'rgba(190, 24, 93, 0.03)', borderRadius: '8px', border: '1px solid rgba(190, 24, 93, 0.1)' }}>
               <div>
                 <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block', fontWeight: 600 }}>DEEP CONVERSATIONS</span>
                 <strong style={{ fontSize: '1.25rem', fontFamily: 'var(--font-display)' }}>{meaningfulConversations} logged</strong>
@@ -88,7 +88,7 @@ export default function PersonalLife({ state, updateState, awardXP }) {
               <button 
                 onClick={handleLogConversation}
                 className="cyber-btn"
-                style={{ fontSize: '0.75rem', padding: '6px 12px', color: '#c084fc', borderColor: 'rgba(168, 85, 247, 0.3)' }}
+                style={{ fontSize: '0.75rem', padding: '6px 12px', color: 'var(--area-personal)', borderColor: 'rgba(190, 24, 93, 0.3)' }}
               >
                 <MessagesSquare size={14} /> Log Dialogue (+5 XP)
               </button>
@@ -113,7 +113,7 @@ export default function PersonalLife({ state, updateState, awardXP }) {
             </p>
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px' }}>
+          <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '16px' }}>
             {editingHealth ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', animation: 'popUp 0.2s ease' }}>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>

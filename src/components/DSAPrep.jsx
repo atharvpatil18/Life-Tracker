@@ -59,7 +59,6 @@ export default function DSAPrep({ state, updateState, awardXP }) {
 
       const total = e + m + h;
       
-      // Update topic mastery slightly
       const currentMastery = prev.dsaMetrics.topicMastery[logTopic] || 50;
       const updatedTopicMastery = {
         ...prev.dsaMetrics.topicMastery,
@@ -89,7 +88,7 @@ export default function DSAPrep({ state, updateState, awardXP }) {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
             <Code2 size={28} color="var(--area-dsa)" /> DSA Prep & Problem Solving
           </h2>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
@@ -127,27 +126,27 @@ export default function DSAPrep({ state, updateState, awardXP }) {
             </div>
 
             {/* Distribution */}
-            <div style={{ display: 'flex', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px' }}>
-              <div style={{ flex: 1, padding: '10px', background: 'rgba(16, 185, 129, 0.05)', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.1)' }}>
+            <div style={{ display: 'flex', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '16px' }}>
+              <div style={{ flex: 1, padding: '10px', background: 'rgba(22, 101, 52, 0.04)', borderRadius: '8px', border: '1px solid rgba(22, 101, 52, 0.1)' }}>
                 <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', block: 'true' }}>EASY</span>
-                <strong style={{ color: '#10b981', fontSize: '1.25rem' }}>{solvedEasy}</strong>
+                <strong style={{ color: '#166534', fontSize: '1.25rem' }}>{solvedEasy}</strong>
               </div>
               
-              <div style={{ flex: 1, padding: '10px', background: 'rgba(59, 130, 246, 0.05)', borderRadius: '8px', border: '1px solid rgba(59, 130, 246, 0.1)' }}>
+              <div style={{ flex: 1, padding: '10px', background: 'var(--area-dsa-glow)', borderRadius: '8px', border: '1px solid rgba(194, 65, 12, 0.1)' }}>
                 <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', block: 'true' }}>MEDIUM</span>
-                <strong style={{ color: '#3b82f6', fontSize: '1.25rem' }}>{solvedMedium}</strong>
+                <strong style={{ color: 'var(--area-dsa)', fontSize: '1.25rem' }}>{solvedMedium}</strong>
               </div>
 
-              <div style={{ flex: 1, padding: '10px', background: 'rgba(244, 63, 94, 0.05)', borderRadius: '8px', border: '1px solid rgba(244, 63, 94, 0.1)' }}>
+              <div style={{ flex: 1, padding: '10px', background: 'var(--area-health-glow)', borderRadius: '8px', border: '1px solid rgba(220, 38, 38, 0.1)' }}>
                 <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', block: 'true' }}>HARD</span>
-                <strong style={{ color: '#f43f5e', fontSize: '1.25rem' }}>{solvedHard}</strong>
+                <strong style={{ color: 'var(--area-health)', fontSize: '1.25rem' }}>{solvedHard}</strong>
               </div>
             </div>
           </div>
 
           {/* Quick manual logging */}
           <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
               <Plus size={20} color="var(--area-dsa)" /> Log Solved Question
             </h3>
 
@@ -193,7 +192,7 @@ export default function DSAPrep({ state, updateState, awardXP }) {
         {/* Right Side: Topic Mastery details */}
         <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
           
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
             <BarChart2 size={20} color="var(--area-dsa)" /> Algorithmic Topic Mastery
           </h3>
 
@@ -204,22 +203,22 @@ export default function DSAPrep({ state, updateState, awardXP }) {
                   <span style={{ fontWeight: 600 }}>{topic}</span>
                   <span style={{ color: 'var(--area-dsa)', fontWeight: 700 }}>{mastery}%</span>
                 </div>
-                <div style={{ width: '100%', height: '8px', background: 'rgba(255,255,255,0.03)', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden' }}>
-                  <div style={{ width: `${mastery}%`, height: '100%', background: 'linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%)', borderRadius: '999px' }}></div>
+                <div style={{ width: '100%', height: '8px', background: 'rgba(0,0,0,0.04)', borderRadius: '999px', border: '1px solid var(--color-border)', overflow: 'hidden' }}>
+                  <div style={{ width: `${mastery}%`, height: '100%', background: 'linear-gradient(90deg, var(--area-dsa) 0%, var(--area-leadership) 100%)', borderRadius: '999px' }}></div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Readiness gauges */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '8px' }}>
+          <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '8px' }}>
             <div>
               <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>INTERVIEW READINESS</span>
               <strong style={{ fontSize: '1.25rem', display: 'block', color: 'var(--area-academics)' }}>{interviewReadiness}% Rating</strong>
             </div>
             
             <div>
-              <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>CONTEST CONTEST RATING</span>
+              <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>CONTEST RATING</span>
               <strong style={{ fontSize: '1.25rem', display: 'block', color: 'var(--area-leadership)' }}>{contestRating} Rating</strong>
             </div>
           </div>

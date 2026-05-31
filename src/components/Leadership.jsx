@@ -149,7 +149,7 @@ export default function Leadership({ state, updateState, awardXP }) {
             </p>
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: '#10b981' }}>
               <TrendingUp size={16} />
               <span>SIGCHI Active members: <strong>48 Staff</strong></span>

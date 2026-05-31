@@ -163,9 +163,9 @@ export default function AICoach({ state }) {
               style={{ 
                 alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start',
                 maxWidth: '80%',
-                background: msg.role === 'user' ? 'rgba(59, 130, 246, 0.12)' : 'rgba(15, 23, 42, 0.65)',
-                border: msg.role === 'user' ? '1px solid rgba(59,130,246,0.3)' : '1px solid var(--color-border)',
-                color: '#fff',
+                background: msg.role === 'user' ? 'rgba(194, 65, 12, 0.05)' : 'rgba(124, 58, 237, 0.05)',
+                border: msg.role === 'user' ? '1px solid rgba(194, 65, 12, 0.15)' : '1px solid rgba(124, 58, 237, 0.15)',
+                color: 'var(--color-text-primary)',
                 padding: '12px 16px',
                 borderRadius: msg.role === 'user' ? '12px 12px 0 12px' : '12px 12px 12px 0',
                 fontSize: '0.9rem',
@@ -182,14 +182,14 @@ export default function AICoach({ state }) {
           ))}
           
           {loading && (
-            <div style={{ alignSelf: 'flex-start', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: 'var(--color-text-secondary)', padding: '12px 16px', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+            <div style={{ alignSelf: 'flex-start', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: 'var(--color-text-secondary)', padding: '12px 16px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
               <RefreshCw size={14} className="animate-float" /> Gemini model is analyzing life parameters...
             </div>
           )}
         </div>
 
         {/* Input box */}
-        <form onSubmit={handleSendMessage} style={{ padding: '16px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', gap: '12px', background: 'rgba(4, 6, 13, 0.4)' }}>
+        <form onSubmit={handleSendMessage} style={{ padding: '16px', borderTop: '1px solid var(--color-border)', display: 'flex', gap: '12px', background: 'rgba(0, 0, 0, 0.01)' }}>
           <input 
             type="text" 
             placeholder="Ask your coach anything (e.g. How can I balance LeetCode prep with research?)..." 

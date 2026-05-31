@@ -48,7 +48,7 @@ export default function Timeline({ state }) {
         {/* Visual Timeline pane */}
         <div className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
-          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '24px', paddingLeft: '24px', borderLeft: '2px solid rgba(59, 130, 246, 0.15)' }}>
+          <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '24px', paddingLeft: '24px', borderLeft: '2px solid var(--color-border)' }}>
             
             {milestones.map((ms, index) => (
               <div key={index} style={{ position: 'relative' }}>
@@ -61,7 +61,7 @@ export default function Timeline({ state }) {
                   width: '16px', 
                   height: '16px', 
                   borderRadius: '50%', 
-                  background: 'var(--color-bg-darkest)',
+                  background: 'var(--color-bg-surface)',
                   border: '3px solid var(--area-leadership)',
                   boxShadow: '0 0 10px var(--area-leadership-glow)',
                   zIndex: 2
@@ -80,7 +80,7 @@ export default function Timeline({ state }) {
                     {ms.year}
                   </span>
                   
-                  <h4 style={{ fontWeight: 800, fontSize: '1rem', marginTop: '4px', color: '#fff' }}>{ms.title}</h4>
+                  <h4 style={{ fontWeight: 800, fontSize: '1rem', marginTop: '4px', color: 'var(--color-text-primary)' }}>{ms.title}</h4>
                   <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', marginTop: '4px', lineHeight: '1.4' }}>{ms.desc}</p>
                 </div>
 

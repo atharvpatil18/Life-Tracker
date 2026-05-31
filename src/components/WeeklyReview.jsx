@@ -84,7 +84,7 @@ export default function WeeklyReview({ state, updateState, awardXP }) {
               {weeklyReviews.map(rev => (
                 <div key={rev.id} className="glass-panel" style={{ padding: '20px', borderLeft: '4px solid var(--area-academics)' }}>
                   
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '10px', marginBottom: '12px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--color-border)', paddingBottom: '10px', marginBottom: '12px' }}>
                     <span style={{ fontSize: '0.8rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--area-academics)' }}>
                       <Calendar size={14} /> WEEKLY REVIEW - {rev.date}
                     </span>
@@ -97,10 +97,10 @@ export default function WeeklyReview({ state, updateState, awardXP }) {
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.85rem', lineHeight: '1.4', color: 'var(--color-text-secondary)' }}>
-                    <p><strong style={{ color: '#fff' }}>Achievements & Wins:</strong> {rev.wins}</p>
-                    <p><strong style={{ color: '#fff' }}>Mistakes & Time-Wasters:</strong> {rev.mistakes}</p>
-                    {rev.learning && <p><strong style={{ color: '#fff' }}>Lessons Learned:</strong> {rev.learning}</p>}
-                    {rev.improvements && <p><strong style={{ color: '#fff' }}>Adjustments & Improvements:</strong> {rev.improvements}</p>}
+                    <p><strong style={{ color: 'var(--color-text-primary)' }}>Achievements & Wins:</strong> {rev.wins}</p>
+                    <p><strong style={{ color: 'var(--color-text-primary)' }}>Mistakes & Time-Wasters:</strong> {rev.mistakes}</p>
+                    {rev.learning && <p><strong style={{ color: 'var(--color-text-primary)' }}>Lessons Learned:</strong> {rev.learning}</p>}
+                    {rev.improvements && <p><strong style={{ color: 'var(--color-text-primary)' }}>Adjustments & Improvements:</strong> {rev.improvements}</p>}
                   </div>
 
                 </div>

@@ -39,7 +39,6 @@ export default function Journal({ state, updateState, awardXP }) {
     }
   };
 
-  // Filter logic
   const filteredEntries = journal.filter(entry => {
     const matchesSearch = entry.content.toLowerCase().includes(searchText.toLowerCase());
     const matchesTag = selectedTag ? entry.tags.includes(selectedTag.toLowerCase()) : true;
@@ -51,7 +50,7 @@ export default function Journal({ state, updateState, awardXP }) {
       
       {/* Header */}
       <div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
           <BookOpen size={28} color="var(--area-personal)" /> Smart Growth Journal
         </h2>
         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
@@ -83,9 +82,9 @@ export default function Journal({ state, updateState, awardXP }) {
             <button 
               onClick={() => setSelectedTag('')}
               style={{ 
-                fontSize: '0.7rem', padding: '4px 10px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.05)', cursor: 'pointer',
-                background: selectedTag === '' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                color: selectedTag === '' ? '#3b82f6' : 'var(--color-text-secondary)'
+                fontSize: '0.7rem', padding: '4px 10px', borderRadius: '4px', border: '1px solid var(--color-border)', cursor: 'pointer',
+                background: selectedTag === '' ? 'var(--area-dsa-glow)' : 'transparent',
+                color: selectedTag === '' ? 'var(--area-dsa)' : 'var(--color-text-secondary)'
               }}
             >
               All Tags
@@ -95,9 +94,9 @@ export default function Journal({ state, updateState, awardXP }) {
                 key={tag}
                 onClick={() => setSelectedTag(selectedTag === tag ? '' : tag)}
                 style={{ 
-                  fontSize: '0.7rem', padding: '4px 10px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.05)', cursor: 'pointer',
-                  background: selectedTag === tag ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                  color: selectedTag === tag ? '#3b82f6' : 'var(--color-text-secondary)'
+                  fontSize: '0.7rem', padding: '4px 10px', borderRadius: '4px', border: '1px solid var(--color-border)', cursor: 'pointer',
+                  background: selectedTag === tag ? 'var(--area-dsa-glow)' : 'transparent',
+                  color: selectedTag === tag ? 'var(--area-dsa)' : 'var(--color-text-secondary)'
                 }}
               >
                 #{tag}
@@ -113,7 +112,7 @@ export default function Journal({ state, updateState, awardXP }) {
               </div>
             ) : (
               filteredEntries.map(entry => (
-                <div key={entry.id} style={{ padding: '12px 14px', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)' }}>
+                <div key={entry.id} style={{ padding: '12px 14px', background: 'rgba(0,0,0,0.01)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                     <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -131,7 +130,7 @@ export default function Journal({ state, updateState, awardXP }) {
                   
                   <div style={{ display: 'flex', gap: '6px', marginTop: '10px' }}>
                     {entry.tags.map(t => (
-                      <span key={t} style={{ fontSize: '0.65rem', background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.15)', color: '#60a5fa', padding: '1px 6px', borderRadius: '4px' }}>
+                      <span key={t} style={{ fontSize: '0.65rem', background: 'var(--area-dsa-glow)', border: '1px solid rgba(194, 65, 12, 0.15)', color: 'var(--area-dsa)', padding: '1px 6px', borderRadius: '4px' }}>
                         #{t}
                       </span>
                     ))}
@@ -148,7 +147,7 @@ export default function Journal({ state, updateState, awardXP }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           
           {/* Reflective Prompt Card */}
-          <div className="glass-panel" style={{ padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start', borderLeft: '4px solid var(--area-personal)' }}>
+          <div className="glass-panel" style={{ padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start', borderLeft: '4px solid var(--area-personal)', borderColor: 'var(--area-personal)' }}>
             <HelpCircle size={20} color="var(--area-personal)" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
               <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', tracking: '0.05em' }}>AI REFLECTION PROMPT</span>
@@ -160,7 +159,7 @@ export default function Journal({ state, updateState, awardXP }) {
 
           {/* Smart Editor */}
           <div className="glass-panel" style={{ padding: '24px' }}>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
               <Sparkles size={20} color="var(--area-personal)" /> Write Reflection Log
             </h3>
 

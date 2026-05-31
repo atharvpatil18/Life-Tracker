@@ -70,7 +70,7 @@ export default function GrowthAnalytics({ state }) {
                 <circle 
                   key={r} cx="125" cy="125" r={r} 
                   fill="transparent" 
-                  stroke="rgba(255,255,255,0.04)" 
+                  stroke="rgba(0,0,0,0.06)" 
                   strokeWidth="1"
                 />
               ))}
@@ -81,7 +81,7 @@ export default function GrowthAnalytics({ state }) {
                 return (
                   <line 
                     key={d.label} x1="125" y1="125" x2={end.x} y2={end.y} 
-                    stroke="rgba(255,255,255,0.04)" 
+                    stroke="rgba(0,0,0,0.06)" 
                     strokeWidth="1"
                   />
                 );
@@ -132,7 +132,7 @@ export default function GrowthAnalytics({ state }) {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             
             {/* Coding */}
-            <div style={{ padding: '16px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block', fontWeight: 600 }}>DSA PROBLEM SOLVING</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
                 <TrendingUp size={20} color="var(--area-academics)" />
@@ -141,7 +141,7 @@ export default function GrowthAnalytics({ state }) {
             </div>
 
             {/* Learning */}
-            <div style={{ padding: '16px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block', fontWeight: 600 }}>TECHNICAL STUDY</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
                 <TrendingUp size={20} color="var(--area-academics)" />
@@ -150,7 +150,7 @@ export default function GrowthAnalytics({ state }) {
             </div>
 
             {/* Fitness */}
-            <div style={{ padding: '16px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block', fontWeight: 600 }}>GYM WORKOUTS</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
                 <TrendingUp size={20} color="var(--area-academics)" />
@@ -159,7 +159,7 @@ export default function GrowthAnalytics({ state }) {
             </div>
 
             {/* Sleep */}
-            <div style={{ padding: '16px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
               <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block', fontWeight: 600 }}>SLEEP QUALITY</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
                 <TrendingDown size={20} color="var(--area-health)" />

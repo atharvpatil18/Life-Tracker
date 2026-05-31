@@ -17,7 +17,6 @@ export default function VisionBoard({ state, updateState, awardXP }) {
             if (s.id === stepId) {
               const newStatus = !s.completed;
               if (newStatus) {
-                // Award micro XP for sub steps
                 setTimeout(() => awardXP(10, `Completed Goal Step: "${s.title}"`), 100);
               }
               return { ...s, completed: newStatus };
@@ -29,7 +28,6 @@ export default function VisionBoard({ state, updateState, awardXP }) {
           const allDone = completedCount === updatedSteps.length;
           
           if (allDone && !vis.completed) {
-            // Massive Vision Goal XP!
             setTimeout(() => awardXP(100, `ARCHIEVED LIFE VISION OBJECTIVE: "${vis.title}" (+100 XP Visionary Bonus)`), 200);
           }
 
@@ -53,7 +51,6 @@ export default function VisionBoard({ state, updateState, awardXP }) {
     e.preventDefault();
     if (!newGoalTitle.trim()) return;
 
-    // Parse sub steps from newline split
     const stepsArray = newGoalStepsText
       .split('\n')
       .map(s => s.trim())
@@ -98,7 +95,7 @@ export default function VisionBoard({ state, updateState, awardXP }) {
       
       {/* Header */}
       <div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
           <Compass size={28} color="var(--area-leadership)" /> Vision Board & Decomposition
         </h2>
         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
@@ -107,14 +104,14 @@ export default function VisionBoard({ state, updateState, awardXP }) {
       </div>
 
       {/* Horizon selector buttons */}
-      <div style={{ display: 'flex', gap: '12px', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '12px' }}>
+      <div style={{ display: 'flex', gap: '12px', borderBottom: '1px solid var(--color-border)', paddingBottom: '12px' }}>
         <button 
           onClick={() => setActiveFrame('1yr')}
           className="cyber-btn"
           style={{ 
-            background: activeFrame === '1yr' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-            borderColor: activeFrame === '1yr' ? '#3b82f6' : 'transparent',
-            color: activeFrame === '1yr' ? '#fff' : 'var(--color-text-secondary)'
+            background: activeFrame === '1yr' ? 'var(--area-dsa-glow)' : 'transparent',
+            borderColor: activeFrame === '1yr' ? 'var(--area-dsa)' : 'transparent',
+            color: activeFrame === '1yr' ? 'var(--area-dsa)' : 'var(--color-text-secondary)'
           }}
         >
           1-Year Horizon (Sophomore Milestones)
@@ -124,9 +121,9 @@ export default function VisionBoard({ state, updateState, awardXP }) {
           onClick={() => setActiveFrame('3yr')}
           className="cyber-btn"
           style={{ 
-            background: activeFrame === '3yr' ? 'rgba(139, 92, 246, 0.15)' : 'transparent',
-            borderColor: activeFrame === '3yr' ? '#8b5cf6' : 'transparent',
-            color: activeFrame === '3yr' ? '#fff' : 'var(--color-text-secondary)'
+            background: activeFrame === '3yr' ? 'var(--area-research-glow)' : 'transparent',
+            borderColor: activeFrame === '3yr' ? 'var(--area-research)' : 'transparent',
+            color: activeFrame === '3yr' ? 'var(--area-research)' : 'var(--color-text-secondary)'
           }}
         >
           3-Year Horizon (Graduate placement/MS)
@@ -136,9 +133,9 @@ export default function VisionBoard({ state, updateState, awardXP }) {
           onClick={() => setActiveFrame('10yr')}
           className="cyber-btn"
           style={{ 
-            background: activeFrame === '10yr' ? 'rgba(245, 158, 11, 0.15)' : 'transparent',
-            borderColor: activeFrame === '10yr' ? '#f59e0b' : 'transparent',
-            color: activeFrame === '10yr' ? '#fff' : 'var(--color-text-secondary)'
+            background: activeFrame === '10yr' ? 'var(--area-leadership-glow)' : 'transparent',
+            borderColor: activeFrame === '10yr' ? 'var(--area-leadership)' : 'transparent',
+            color: activeFrame === '10yr' ? 'var(--area-leadership)' : 'var(--color-text-secondary)'
           }}
         >
           10-Year Horizon (Tech Entrepreneurship)
@@ -150,7 +147,7 @@ export default function VisionBoard({ state, updateState, awardXP }) {
         
         {/* Goal Tree pane */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
             <Award size={20} color="var(--area-leadership)" /> Current Milestones checklist
           </h3>
 
@@ -175,19 +172,19 @@ export default function VisionBoard({ state, updateState, awardXP }) {
                       display: 'flex', 
                       flexDirection: 'column', 
                       gap: '12px',
-                      borderLeft: goal.completed ? '4px solid #10b981' : '1px solid var(--color-border)',
-                      borderColor: goal.completed ? '#10b981' : 'inherit'
+                      borderLeft: goal.completed ? '4px solid var(--area-academics)' : '1px solid var(--color-border)',
+                      borderColor: goal.completed ? 'var(--area-academics)' : 'inherit'
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                       <div style={{ flex: 1, cursor: 'pointer' }} onClick={() => setExpandedGoalId(isExpanded ? null : goal.id)}>
-                        <h4 style={{ fontWeight: 700, fontSize: '1rem', textDecoration: goal.completed ? 'line-through' : 'none', color: goal.completed ? 'var(--color-text-muted)' : '#fff' }}>
+                        <h4 style={{ fontWeight: 700, fontSize: '1rem', textDecoration: goal.completed ? 'line-through' : 'none', color: goal.completed ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' }}>
                           {goal.title}
                         </h4>
                         
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '6px' }}>
-                          <div style={{ width: '120px', height: '4px', background: 'rgba(255,255,255,0.03)', borderRadius: '999px', overflow: 'hidden' }}>
-                            <div style={{ width: `${progress}%`, height: '100%', background: 'linear-gradient(90deg, #10b981 0%, #059669 100%)' }}></div>
+                          <div style={{ width: '120px', height: '4px', background: 'rgba(0,0,0,0.04)', borderRadius: '999px', overflow: 'hidden' }}>
+                            <div style={{ width: `${progress}%`, height: '100%', background: 'linear-gradient(90deg, var(--area-academics) 0%, var(--area-academics) 100%)' }}></div>
                           </div>
                           <span style={{ fontSize: '0.7rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>{progress}% ({completedSteps}/{totalSteps} steps)</span>
                         </div>
@@ -213,7 +210,7 @@ export default function VisionBoard({ state, updateState, awardXP }) {
                     {/* Expandable decomposition sub steps tree */}
                     {isExpanded && (
                       <div style={{ 
-                        borderTop: '1px solid rgba(255,255,255,0.05)', 
+                        borderTop: '1px solid var(--color-border)', 
                         paddingTop: '12px', 
                         paddingLeft: '8px', 
                         display: 'flex', 
@@ -233,11 +230,11 @@ export default function VisionBoard({ state, updateState, awardXP }) {
                               gap: '8px', 
                               fontSize: '0.85rem', 
                               cursor: 'pointer',
-                              color: step.completed ? 'var(--color-text-secondary)' : '#fff' 
+                              color: step.completed ? 'var(--color-text-secondary)' : 'var(--color-text-primary)' 
                             }}
                           >
                             {step.completed ? (
-                              <CheckCircle2 size={16} color="#10b981" />
+                              <CheckCircle2 size={16} color="var(--area-academics)" />
                             ) : (
                               <Circle size={16} color="var(--color-text-muted)" />
                             )}
@@ -256,7 +253,7 @@ export default function VisionBoard({ state, updateState, awardXP }) {
 
         {/* Goal Creator Form */}
         <div className="glass-panel" style={{ padding: '24px', height: 'fit-content' }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-primary)' }}>
             <Plus size={20} color="var(--area-leadership)" /> Project Life Objective
           </h3>
 

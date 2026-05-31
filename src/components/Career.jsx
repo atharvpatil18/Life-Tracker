@@ -132,7 +132,7 @@ export default function Career({ state, updateState, awardXP }) {
               <button 
                 onClick={handleAddLinkedInPost}
                 className="cyber-btn"
-                style={{ fontSize: '0.75rem', padding: '6px 12px', width: '100%', justifyContent: 'center', borderColor: 'rgba(96, 165, 250, 0.3)', color: '#60a5fa' }}
+                style={{ fontSize: '0.75rem', padding: '6px 12px', width: '100%', justifyContent: 'center', borderColor: 'rgba(124, 58, 237, 0.3)', color: 'var(--area-research)' }}
               >
                 <Plus size={14} /> Log Published Post (+10 XP)
               </button>
@@ -148,7 +148,7 @@ export default function Career({ state, updateState, awardXP }) {
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {state.projects.map((proj, idx) => (
-                <div key={idx} style={{ padding: '12px 16px', background: 'rgba(15, 23, 42, 0.4)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div key={idx} style={{ padding: '12px 16px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '0.95rem' }}>{proj.name}</h4>
                     <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>{proj.description}</p>
@@ -156,9 +156,9 @@ export default function Career({ state, updateState, awardXP }) {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <span style={{ 
                       fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', fontWeight: 600,
-                      background: proj.status === 'Completed' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(59, 130, 246, 0.1)',
+                      background: proj.status === 'Completed' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(194, 65, 12, 0.1)',
                       color: proj.status === 'Completed' ? 'var(--area-academics)' : 'var(--area-dsa)',
-                      border: proj.status === 'Completed' ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(59, 130, 246, 0.2)',
+                      border: proj.status === 'Completed' ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(194, 65, 12, 0.2)',
                     }}>
                       {proj.status}
                     </span>
@@ -173,7 +173,7 @@ export default function Career({ state, updateState, awardXP }) {
 
         {/* GitHub Panel */}
         <div className="glass-panel glass-card-glow-career" style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '12px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '1px solid var(--color-border)', paddingBottom: '12px' }}>
             <Github size={20} /> GitHub Integrations
           </h3>
 
@@ -200,11 +200,11 @@ export default function Career({ state, updateState, awardXP }) {
                 </div>
               ) : (
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <div style={{ padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.02)' }}>
+                  <div style={{ padding: '12px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
                     <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block' }}>PUBLIC REPOS</span>
                     <strong style={{ fontSize: '1.25rem', fontFamily: 'var(--font-display)' }}>{ghData ? ghData.public_repos : 24}</strong>
                   </div>
-                  <div style={{ padding: '12px', background: 'rgba(0,0,0,0.2)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.02)' }}>
+                  <div style={{ padding: '12px', background: 'var(--color-bg-base)', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
                     <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', display: 'block' }}>FOLLOWERS</span>
                     <strong style={{ fontSize: '1.25rem', fontFamily: 'var(--font-display)' }}>{ghData ? ghData.followers : 180}</strong>
                   </div>
@@ -212,7 +212,7 @@ export default function Career({ state, updateState, awardXP }) {
               )}
 
               {/* Merged PR log button */}
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><GitPullRequest size={14} color="var(--area-career)" /> Open Source PRs:</span>
                   <strong>{openSourcePrs} Merged</strong>

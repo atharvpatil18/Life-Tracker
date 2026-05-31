@@ -9,7 +9,7 @@ Instead of asking *"What tasks did I complete today?"*, AtharvOS asks: ***"Am I 
 
 ## 🌟 Core Modules (All-in-One Growth Suite)
 
-AtharvOS consolidates **15 P0/P1 modules** into a single glassmorphic cyber-dark dashboard interface:
+AtharvOS consolidates **15 P0/P1 modules** into a single stunning warm alabaster editorial dashboard interface:
 
 1. **Dashboard & Life Score radial gauge**: A composite metric (0-100) recalculated dynamically from academics, LeetCode solving rates, ML research papers read, and habit consistency.
 2. **Active Burn Streaks**: Highlights consistency streaks (e.g., Coding, Workout, Journaling) with animated fire elements.
