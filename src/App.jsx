@@ -249,12 +249,12 @@ export default function App() {
                 key={item.id} 
                 onClick={() => setActiveTab(item.id)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(59, 130, 246, 0.12)' : 'transparent',
+                  background: active ? 'rgba(59, 130, 246, 0.08)' : 'transparent',
                   color: active ? '#3b82f6' : 'var(--color-text-secondary)',
                   borderLeft: active ? '3px solid #3b82f6' : '3px solid transparent',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
@@ -273,12 +273,12 @@ export default function App() {
                 key={item.id} 
                 onClick={() => setActiveTab(item.id)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
                   background: active ? 'rgba(139, 92, 246, 0.08)' : 'transparent',
                   color: active ? '#8b5cf6' : 'var(--color-text-secondary)',
                   borderLeft: active ? '3px solid #8b5cf6' : '3px solid transparent',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
@@ -297,12 +297,12 @@ export default function App() {
                 key={item.id} 
                 onClick={() => setActiveTab(item.id)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
                   background: active ? 'rgba(245, 158, 11, 0.08)' : 'transparent',
                   color: active ? '#f59e0b' : 'var(--color-text-secondary)',
                   borderLeft: active ? '3px solid #f59e0b' : '3px solid transparent',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
@@ -321,12 +321,12 @@ export default function App() {
                 key={item.id} 
                 onClick={() => setActiveTab(item.id)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
                   background: active ? 'rgba(16, 185, 129, 0.08)' : 'transparent',
                   color: active ? '#10b981' : 'var(--color-text-secondary)',
                   borderLeft: active ? '3px solid #10b981' : '3px solid transparent',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
@@ -345,16 +345,16 @@ export default function App() {
                 key={item.id} 
                 onClick={() => setActiveTab(item.id)}
                 style={{
-                  display: 'flex', alignItems: 'center', gap: '10px', width: '100%', padding: '10px 12px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '12px', width: '100%', padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: active ? 600 : 500, textAlign: 'left',
-                  background: active ? 'rgba(100, 116, 139, 0.1)' : 'transparent',
-                  color: active ? '#94a3b8' : 'var(--color-text-secondary)',
-                  borderLeft: active ? '3px solid #94a3b8' : '3px solid transparent',
-                  transition: 'all 0.15s ease'
+                  background: active ? 'rgba(255, 255, 255, 0.04)' : 'transparent',
+                  color: active ? '#f9fafb' : 'var(--color-text-secondary)',
+                  borderLeft: active ? '3px solid rgba(255,255,255,0.4)' : '3px solid transparent',
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
                 className="nav-btn"
               >
-                <Icon size={18} style={{ color: active ? '#94a3b8' : 'inherit' }} />
+                <Icon size={18} style={{ color: active ? '#f9fafb' : 'inherit' }} />
                 <span className="nav-label">{item.label}</span>
               </button>
             );
